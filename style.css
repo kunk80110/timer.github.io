@@ -2,14 +2,17 @@
   box-sizing: border-box;
 }
 
+
 body {
   background-color: #222222;
 }
+
 
 h1 {
   color: #dfdfdf;
   font-size: 48px;
 }
+
 
 .timer {
   margin: 0 auto;
@@ -21,6 +24,7 @@ h1 {
   padding: 50px;
   border-radius: 20px;
 }
+
 
 button {
   width: 90%;
@@ -35,9 +39,11 @@ button {
   transition: 0.2s background-color linear;
 }
 
+
 button:hover {
   background-color: #333;
 }
+
 
 button:disabled {
   background-color: #555;
