@@ -1,6 +1,8 @@
+//constans for avoid mistakes during typing 'dark' or 'light'
 const dark = 'DARK';
 const light = 'LIGHT';
 
+//Get HTML-objects to change them
 const OBJECTS = {
   BACKGROUND: document.getElementById('wrap'),
   TIMER: document.getElementById('timer'),
@@ -11,6 +13,7 @@ const OBJECTS = {
   CHANGETHEMEBTN: document.getElementById('changeThemeBtn'),
 };
 
+//Function which change theme. It calls by pressing a button "change theme"
 const render = () => {
   if (SETTINGS.THEME == dark) {
     SETTINGS.THEME = light;
@@ -32,37 +35,34 @@ const render = () => {
     OBJECTS.CHANGETHEMEBTN.classList = ['button_dark'];
   } else {
     alert(
-      'Error at func:render(). Please write a message to telegram @wildovaniy_tech'
+      'Error at func:render(). Please write a message to telegram @wildovaniy'
     );
   }
 };
 
+//setting, where THEME - theme now 'dark' or 'light', tick: a delay of function addCounter
 const SETTINGS = {
   THEME: dark,
   TICK: 100,
-  METHODS: {
-    changeTheme() {
-      if (this.THEME == dark) {
-        this.THEME = light;
-      } else {
-        this.THEME = dark;
-      }
-    },
-  },
 };
 
+//variables
 let hundredseconds = 0;
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
+
+//constans
 const timer = document.getElementById('timer');
 const stopBtn = document.getElementById('stopBtn');
 const clearBtn = document.getElementById('clearBtn');
 const startBtn = document.getElementById('startBtn');
 
+//The timer
 const Timer = {
   interval: '',
   switchedOn: '',
+  //It starts/continues the timer
   setClock: function () {
     if (!this.switchedOn) {
       this.interval = setInterval(() => addCounter(), SETTINGS.TICK);
@@ -75,6 +75,7 @@ const Timer = {
       }
     }
   },
+  //It stops the timer
   stopClock: function () {
     clearInterval(this.interval);
     this.interval = '';
@@ -84,9 +85,11 @@ const Timer = {
   },
 };
 
+//Bind the functions
 const startTimer = Timer.setClock.bind(Timer);
 const stopTimer = Timer.stopClock.bind(Timer);
 
+//functions for changing attr "disabled" of buttons
 const btns = {
   switchOff: function (button) {
     button.disabled = true;
@@ -96,6 +99,7 @@ const btns = {
   },
 };
 
+//Working of timer
 const addCounter = () => {
   ++hundredseconds;
   if (hundredseconds == 10) {
@@ -110,12 +114,14 @@ const addCounter = () => {
     minutes = 0;
     hours++;
   }
-
+  
+  //Set a new text every 0.1s or a value in SETTINGS.TICK
   timer.innerHTML = `${hours < 10 ? `0${hours}` : hours}:${
     minutes < 10 ? `0${minutes}` : minutes
   }:${seconds < 10 ? `0${seconds}` : seconds}.${hundredseconds}`;
 };
 
+//set vars hundredseconds, seconds, minutes, hours = 0
 const clearTimer = () => {
   [hundredseconds, seconds, minutes, hours] = [0, 0, 0, 0];
   timer.innerHTML = `00:00:00.0`;
