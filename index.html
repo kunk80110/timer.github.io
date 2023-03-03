@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>JavaScript</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="timer">
-        <h1 id="timer">00 : 00 : 00</h1>
+
+<body id="wrap" class="bg_dark">
+    <div class="timer_dark" id="timer_inner">
+        <h1 class="h1_dark" id="timer">00:00:00.0</h1>
         <hr>
-        <button disabled id="stopBtn" onclick="stopTimer();">STOP</button><br>
-        <button disabled id="clearBtn" onclick="clearTimer();">CLEAR</button>
-        <button id="startBtn" onclick="startTimer();">START</button>
+        <button class="button_dark" disabled id="stopBtn" onclick="stopTimer()">STOP</button><br>
+        <button class="button_dark" disabled id="clearBtn" onclick="clearTimer()">CLEAR</button>
+        <button class="button_dark" id="startBtn" onclick="startTimer()">START</button>
+        <button class="button_dark" id="changeThemeBtn" onclick="render()">CHANGE THEME</button>
     </div>
     <script type="text/javascript" src="main.js"></script>
 </body>
+
 </html>
