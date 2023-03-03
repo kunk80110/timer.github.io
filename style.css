@@ -2,50 +2,84 @@
   box-sizing: border-box;
 }
 
-
-body {
+.bg_dark {
   background-color: #222222;
 }
 
+.bg_light {
+  background-color: #efefef;
+}
 
-h1 {
-  color: #dfdfdf;
+.h1_dark,
+.h1_light {
   font-size: 48px;
 }
 
+.h1_dark {
+  color: #dfdfdf;
+}
 
-.timer {
+.h1_light {
+  color: #000;
+}
+
+.timer_dark,
+.timer_light {
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 100px;
   width: 500px;
-  height: 600px;
+  height: 700px;
   text-align: center;
-  border: 5px solid #efefef;
   padding: 50px;
   border-radius: 20px;
 }
 
+.timer_dark {
+  border: 5px solid #efefef;
+}
 
-button {
+.timer_light {
+  border: 5px solid #000;
+}
+
+.button_dark,
+.button_light {
   width: 90%;
   height: 70px;
   margin-top: 40px;
-  background-color: #444444;
-  border: 1px solid #bfbfbf;
-  color: #dfdfdf;
   font-size: 20px;
   font-weight: bold;
   border-radius: 10px;
   transition: 0.2s background-color linear;
 }
 
+.button_dark {
+  background-color: #444444;
+  border: 1px solid #bfbfbf;
+  color: #dfdfdf;
+}
 
-button:hover {
+.button_dark:hover {
   background-color: #333;
 }
 
-
-button:disabled {
+.button_dark:disabled {
   background-color: #555;
   color: #bbbbbb;
 }
+
+.button_light {
+  background-color: #efefef;
+  border: 1px solid #222;
+  color: #222;
+}
+
+.button_light:hover {
+  background-color: #cfcfcf;
+}
+
+.button_light:disabled {
+  background-color: #bfbfbf;
+  color: #444;
+}
+
